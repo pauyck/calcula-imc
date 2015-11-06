@@ -35,21 +35,22 @@
     	String status;
     	
     	if(imc >= 17 && imc<=18.49){
-    		status = "Abaixo do peso";
+    		status = "Você Está Abaixo do Peso";
     	}
     	else if(imc >= 18.5 && imc<=24.99){
-    		status = "Peso normal";
+    		status = "Seu Peso Está Normal";
     	}
-    	else if(imc >= 25 && imc<=29,99){
-    		status = "Acima do peso";
+    	else if(imc >= 25 && imc<=29.99){
+    		status = "Você Está Acima do Peso";
     	}else{
     		status= "Sem Calculo";
     	}
     %>
-    
-    IMC: <% out.print(imc);%>
     <br>
-    RESULTADO: <% out.print(status); %>
+    <br>
+    <b>IMC:</b> <% out.print(imc);%>
+    <br>
+    <b>RESULTADO:</b> <% out.print(status); %>
     
   </form>
 </body>

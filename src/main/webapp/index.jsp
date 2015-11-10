@@ -3,74 +3,47 @@
 <head>
 <meta charset="utf-8">
 <title>Calcular IMC</title>
-<link rel="stylesheet" href="css/estilo.css">
 
-<script type="text/javascript">
-	$(document).ready(
-			function() {
-				$(document).mousemove(
-						function(e) {
-							TweenLite.to($('body'), .5, {
-								css : {
-									backgroundPosition : ""
-											+ parseInt(event.pageX / 8) + "px "
-											+ parseInt(event.pageY / '12')
-											+ "px, "
-											+ parseInt(event.pageX / '15')
-											+ "px "
-											+ parseInt(event.pageY / '15')
-											+ "px, "
-											+ parseInt(event.pageX / '30')
-											+ "px "
-											+ parseInt(event.pageY / '30')
-											+ "px"
-								}
-							});
-						});
-			});
-</script>
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<script type="text/javascript" src="acoes.js"></script>
 
 </head>
+<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
 
-
-<body>
-	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
-	<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
-
-	<div class="container">
+<!-- 
+ * parallax_login.html
+ * @Author original @msurguy (tw) -> http://bootsnipp.com/snippets/featured/parallax-login-form
+ * @Tested on FF && CH
+ * @Reworked by @kaptenn_com (tw)
+ * @package PARALLAX LOGIN.
+-->
+        <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+        <body>
+    <div class="container">
 		<div class="row vertical-offset-100">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-
-						<h3 class="panel-title">Calcular o IMC</h3>
-
+						<div class="row-fluid user-row">
+							<a href="http://www.xpersites.com.br" title="Xpersites Agência Web"><img src="http://www.xpersites.com.br/images/object554312304.png"
+								class="img-responsive" alt="Conxole Admin" /></a>
+						</div>
 					</div>
-
 					<div class="panel-body">
-						<form accept-charset="UTF-8" role="form">
+						<form accept-charset="UTF-8" role="form" class="form-signin">
 							<fieldset>
-								<div class="form-group">
-									<input type="text" name="nome">
-								</div>
-								<div class="form-group">
-									<input class="form-control" placeholder="Altura" type="text"
-										name="altura">
-								</div>
-								<div class="form-group">
-									<input class="form-control" placeholder="Peso" type="text"
-										name="peso">
-								</div>
-								<input class="btn btn-lg btn-success btn-block" type="submit"
-									value="Calcular">
-			    	</fieldset>
-			      	</form>
-			    </div>
-			</div>
-		</div>
-	</div>
-</div>
-	<%
+								<label class="panel-login">
+									<div class="login_result"></div>
+								</label> <input class="form-control" placeholder="Nome" id="nome"
+									name="nome" type="text"><br /> <input
+									class="form-control" placeholder="Altura" type="text"
+									id="altura" name="altura"><br /> <input
+									class="form-control" placeholder="Peso" type="text" id="peso"
+									name="peso"> <br></br> <input
+									class="btn btn-lg btn-success btn-block" type="submit"
+									id="login" value="--- Calcular ---"></br>
+
+								<%
     	String paramAltura = request.getParameter("altura");
     	paramAltura = paramAltura == null ? "0" : paramAltura;
     	float altura = Float.parseFloat(paramAltura);
@@ -101,16 +74,20 @@
     		status= "Sem Calculo";
     	}
     %>
-	<br>
-	<br>
-	<b>IMC:</b>
-	<% out.print(imc);%>
-	<br>
-	<b>RESULTADO:</b>
-	<% out.print(status); %>
-
-
+								<br> <br>
+								<h2>
+									<b>IMC:</b>
+									<% out.print(imc);%>
+									<br> RESULTADO:
+									<% out.print(status); %>
+								</h2>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-<!-- http://bootsnipp.com/snippets/featured/parallax-login-form -->
 </html>
 

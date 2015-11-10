@@ -10,11 +10,13 @@
         background: url(http://s18.postimg.org/l7yq0ir3t/pick8_1.jpg);
         
     }
+    
     .form-signin input[type="text"] {
         margin-bottom: 5px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
+    
     .form-signin input[type="password"] {
         margin-bottom: 10px;
         border-top-left-radius: 0;
